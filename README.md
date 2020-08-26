@@ -12,3 +12,9 @@ there. While ABI stability is not maintained between versions, using releases
 from a single major version inside of a Binary framework should still allow for
 ABI compatibility, and things such as lazy operations on collections found here
 should still be inlined.
+
+## Opaque result types
+
+While existing collection types are designed without the use of opaque types, we
+used them here in any introduced collection types as we don't have the same
+backwards compatibility requirements as the standard library.
