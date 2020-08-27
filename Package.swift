@@ -23,14 +23,22 @@ let package = Package(
         .package(
             name: "Either",
             url: "git@github.com:loftware/either-type.git",
-            .branch("master"))
+            .branch("master")),
+        .package(
+            name: "ConcatenatedCollection",
+            url: "git@github.com:loftware/concatenated-collection.git",
+            .branch("master")),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "CollectionEnhancements",
-            dependencies: ["Either"]),
+            dependencies: [
+                "Either",
+                "ConcatenatedCollection"
+            ]
+        ),
         .testTarget(
             name: "CollectionEnhancementsTests",
             dependencies: ["CollectionEnhancements"]),
