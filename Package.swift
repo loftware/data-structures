@@ -4,28 +4,22 @@
 import PackageDescription
 
 let package = Package(
-    name: "CollectionEnhancements",
-    platforms: [
-        .macOS(.v10_15),
-        .iOS(.v13),
-        .tvOS(.v13),
-        .watchOS(.v6),
-    ],
+    name: "LoftDataStructures",
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "CollectionEnhancements",
-            targets: ["CollectionEnhancements"]),
+            name: "LoftDataStructures",
+            targets: ["LoftDataStructures"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
         .package(
-            name: "Either",
+            name: "LoftDataStructures_Either",
             url: "git@github.com:loftware/either-type.git",
             .branch("master")),
         .package(
-            name: "ConcatenatedCollection",
+            name: "LoftDataStructures_ConcatenatedCollection",
             url: "git@github.com:loftware/concatenated-collection.git",
             .branch("master")),
     ],
@@ -33,14 +27,14 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
-            name: "CollectionEnhancements",
+            name: "LoftDataStructures",
             dependencies: [
-                "Either",
-                "ConcatenatedCollection"
+                "LoftDataStructures_Either",
+                "LoftDataStructures_ConcatenatedCollection"
             ]
         ),
         .testTarget(
-            name: "CollectionEnhancementsTests",
-            dependencies: ["CollectionEnhancements"]),
+            name: "LoftDataStructuresTests",
+            dependencies: ["LoftDataStructures"]),
     ]
 )

@@ -1,7 +1,7 @@
 import XCTest
 
-import CollectionEnhancementsTests
+import LoftDataStructuresTests
 
 var tests = [XCTestCaseEntry]()
-tests += CollectionEnhancementsTests.allTests()
+tests += LoftDataStructuresTests.allTests()
 XCTMain(tests)
